@@ -76,6 +76,7 @@ A diagnostic result is evidence, not automatically a root cause. Every repair sh
 ### Diagnostic and Recovery Environments
 
 - Ventoy
+- Medicat
 - Windows PE / WinPE
 - Windows Recovery Environment / WinRE
 - Linux Live environments
