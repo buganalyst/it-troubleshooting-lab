@@ -117,38 +117,6 @@ Typical workflow:
 
 Ventoy is an open-source bootable USB solution that can boot multiple ISO/WIM/IMG/VHD(x)/EFI images from one device. The project documents support for Windows/WinPE and Linux among other environments. See the official Ventoy documentation before creating or modifying recovery media.
 
-## Evidence and Portfolio
-
-The `docs/images/` directory contains screenshots supplied as portfolio evidence/reference material.
-
-### Skills Profile
-
-![IT support and system administration skills](docs/images/skills-profile.png)
-
-### Endpoint Diagnostics and Recovery Lab
-
-![Endpoint diagnostics and recovery lab](docs/images/endpoint-recovery-lab.png)
-
-### Troubleshooting Methodology
-
-![Professional troubleshooting loop](docs/images/troubleshooting-methodology.png)
-
-For future case studies, add screenshots that you personally captured during legitimate testing. Prefer screenshots that show:
-
-- UEFI diagnostics
-- Ventoy boot menu
-- WinPE environment
-- Linux live environment
-- MemTest86 results
-- SMART/NVMe health
-- Disk Management / partition layout
-- Windows Recovery Environment
-- GRUB recovery
-- Network configuration and diagnostic output
-- Before/after validation
-
-Do not publish personal data, product keys, recovery keys, passwords, private IP information, serial numbers, or customer information.
-
 ## Recommended Case Study Format
 
 Every troubleshooting case should document:
@@ -199,32 +167,6 @@ This demonstrates engineering reasoning.
 | Logs | Event Viewer, journalctl | OS/event investigation |
 | Windows | PowerShell | System inspection and automation |
 | Linux | Bash and standard CLI tools | System inspection and troubleshooting |
-
-## Troubleshooting Guides
-
-- [Troubleshooting methodology](docs/troubleshooting-methodology.md)
-- [Endpoint diagnostics](docs/endpoint-diagnostics.md)
-- [Hardware diagnostics](docs/hardware-diagnostics.md)
-- [Storage and data recovery](docs/storage-and-data-recovery.md)
-- [Windows recovery](docs/windows-recovery.md)
-- [Linux recovery](docs/linux-recovery.md)
-- [Bootloader recovery](docs/bootloader-recovery.md)
-- [Networking diagnostics](docs/networking-diagnostics.md)
-- [Recovery toolkit](docs/toolkit.md)
-
-### Procedures
-
-- [Pre-recovery checklist](docs/procedures/pre-recovery-checklist.md)
-- [Windows no-boot workflow](docs/procedures/windows-no-boot.md)
-- [Linux no-boot workflow](docs/procedures/linux-no-boot.md)
-- [Slow-system workflow](docs/procedures/slow-system.md)
-- [No-network workflow](docs/procedures/no-network.md)
-
-### Checklists
-
-- [Endpoint intake](docs/checklists/endpoint-intake.md)
-- [Hardware diagnostics](docs/checklists/hardware-diagnostics.md)
-- [Recovery validation](docs/checklists/recovery-validation.md)
 
 ## Safety and Data Protection
 
