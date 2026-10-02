@@ -98,47 +98,9 @@ A diagnostic result is evidence, not automatically a root cause. Every repair sh
 
 A professional endpoint investigation can be divided into layers:
 
-```text
-+--------------------------------------------------+
-|                 USER / SYMPTOM                   |
-+--------------------------------------------------+
-                       |
-                       v
-+--------------------------------------------------+
-| APPLICATION / SERVICES                           |
-| Logs, errors, service state, application health  |
-+--------------------------------------------------+
-                       |
-                       v
-+--------------------------------------------------+
-| OPERATING SYSTEM                                 |
-| Processes, memory, drivers, filesystems, logs    |
-+--------------------------------------------------+
-                       |
-                       v
-+--------------------------------------------------+
-| NETWORK                                          |
-| NIC, IP, DNS, gateway, routes, ports, firewall  |
-+--------------------------------------------------+
-                       |
-                       v
-+--------------------------------------------------+
-| STORAGE                                          |
-| SMART/NVMe health, partitions, filesystem       |
-+--------------------------------------------------+
-                       |
-                       v
-+--------------------------------------------------+
-| HARDWARE                                         |
-| RAM, CPU, GPU, display, keyboard, power, NIC    |
-+--------------------------------------------------+
-                       |
-                       v
-+--------------------------------------------------+
-| FIRMWARE / BOOT                                  |
-| UEFI/BIOS, Secure Boot, boot entries, bootloader|
-+--------------------------------------------------+
-```
+<p align="center">
+  <img src="images/IT Troubleshooting Flowchart.png" />
+</p>
 
 The correct starting layer depends on the symptom.
 
@@ -148,25 +110,9 @@ A bootable USB is useful because it allows diagnostics and recovery independentl
 
 Typical workflow:
 
-```text
-UEFI / BIOS
-     |
-     v
-Boot Menu
-     |
-     v
-Ventoy
-     |
-     +------------------+
-     |                  |
-     v                  v
-Windows PE          Linux Live
-     |                  |
-     +---------+--------+
-               |
-               v
-        Diagnostics / Recovery
-```
+<p align="center">
+  <img src="images/Boot and Recovery Flowchart.png" />
+</p>
 
 Ventoy is an open-source bootable USB solution that can boot multiple ISO/WIM/IMG/VHD(x)/EFI images from one device. The project documents support for Windows/WinPE and Linux among other environments. See the official Ventoy documentation before creating or modifying recovery media.
 
