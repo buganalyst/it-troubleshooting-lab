@@ -144,47 +144,6 @@ The domains are intentionally expandable. New troubleshooting areas can be added
 - System isolation during security incidents
 - Post-incident validation
 
-# Diagnostic & Recovery Environments
-
-This lab uses multiple environments depending on the fault domain.
-
-### Boot & Recovery
-
-- Ventoy
-- Windows PE / WinPE
-- Windows Recovery Environment / WinRE
-- Linux Live environments
-- Medicat
-- Vendor recovery environments
-
-### Hardware Diagnostics
-
-- MemTest86
-- UEFI/OEM diagnostics
-- CPU diagnostics
-- RAM diagnostics
-- Storage diagnostics
-- Hardware monitoring utilities
-
-### Storage & Recovery
-
-- SMART diagnostics
-- NVMe utilities
-- Disk and partition utilities
-- Filesystem utilities
-- Disk imaging tools
-- Data recovery utilities
-- Disk cloning tools
-
-### Network Diagnostics
-
-- Windows PowerShell
-- Windows networking utilities
-- Linux networking utilities
-- Packet/path testing utilities
-- DNS diagnostic utilities
-- Socket and connection inspection tools
-
 # Engineering Concepts
 
 The repository focuses on transferable troubleshooting principles rather than individual tools.
@@ -290,8 +249,6 @@ Instead document:
 
 This demonstrates the reasoning behind the troubleshooting process rather than simply showing the final command.
 
----
-
 # Tool Matrix
 
 | Domain | Tools / Environments | Purpose |
@@ -333,80 +290,6 @@ Before modifying partitions, filesystems, boot configuration, or disks:
 10. Use appropriate authorization for systems that are not personally owned.
 
 For enterprise or third-party systems, obtain authorization before performing diagnostics, recovery, configuration changes, or security investigations.
-
-# Future Expansion
-
-Planned additions include:
-
-### Endpoint & OS
-
-- Windows performance troubleshooting
-- Windows event-log case studies
-- PowerShell diagnostic scripts
-- Linux system diagnostic scripts
-- Linux boot and filesystem recovery
-- Application troubleshooting
-
-### Networking
-
-- TCP/IP troubleshooting labs
-- DNS troubleshooting
-- DHCP troubleshooting
-- Routing troubleshooting
-- VLAN troubleshooting
-- Switching fundamentals
-- Wi-Fi troubleshooting
-- Firewall troubleshooting
-- Port and service connectivity
-- Packet-analysis exercises
-
-### Server & Enterprise Infrastructure
-
-- Windows Server diagnostics
-- Active Directory troubleshooting
-- DNS server troubleshooting
-- DHCP server troubleshooting
-- File-server troubleshooting
-- Authentication troubleshooting
-- Group Policy troubleshooting
-- Server performance diagnostics
-
-### Virtualization
-
-- Virtual machine boot problems
-- Virtual networking problems
-- Virtual disk problems
-- Hypervisor troubleshooting
-- VM performance diagnostics
-
-### Monitoring & Observability
-
-- System monitoring
-- Resource monitoring
-- Log analysis
-- Event correlation
-- Performance baselines
-- Alert investigation
-- Incident timelines
-
-### Cloud Infrastructure
-
-- Cloud connectivity troubleshooting
-- Virtual network troubleshooting
-- Security-group/firewall diagnosis
-- Compute-instance troubleshooting
-- Storage troubleshooting
-- Load-balancer troubleshooting
-- Cloud monitoring and logging
-
-### Security
-
-- Malware triage
-- Endpoint security troubleshooting
-- Suspicious process investigation
-- Network security investigation
-- Security-event analysis
-- Incident response fundamentals
 
 # Disclaimer
 
