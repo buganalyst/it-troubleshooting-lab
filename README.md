@@ -225,7 +225,7 @@ The purpose of the investigation is to narrow this fault domain using evidence r
 Network incidents should also be approached systematically.
 
 <p align="center">
-  <img src="images/Network Troubleshooting Flowchart.png />
+  <img src="images/Network Troubleshooting Flowchart.png" />
 </p>
 
 This helps distinguish problems such as:
