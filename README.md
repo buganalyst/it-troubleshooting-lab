@@ -218,84 +218,15 @@ For endpoint and workstation problems:
 
 The correct starting layer depends on the observed symptom.
 
-For example:
-
-```text
-Laptop is slow
-      |
-      +--> Application
-      +--> CPU
-      +--> RAM
-      +--> Storage
-      +--> Thermal
-      +--> Driver
-      +--> Malware
-      +--> Background services
-```
-
 The purpose of the investigation is to narrow this fault domain using evidence rather than immediately applying fixes.
 
 # Network Troubleshooting Model
 
 Network incidents should also be approached systematically.
 
-```text
-USER / APPLICATION
-        |
-        v
-SERVICE / PORT
-        |
-        v
-DNS
-        |
-        v
-IP CONFIGURATION
-        |
-        v
-DEFAULT GATEWAY
-        |
-        v
-LOCAL NETWORK
-        |
-        v
-ROUTING
-        |
-        v
-REMOTE NETWORK
-        |
-        v
-INTERNET / DESTINATION
-```
-
-Example:
-
-```text
-"No Internet"
-      |
-      v
-Check interface
-      |
-      v
-Check IP address
-      |
-      v
-Check subnet configuration
-      |
-      v
-Check default gateway
-      |
-      v
-Test gateway
-      |
-      v
-Test remote IP
-      |
-      v
-Test DNS resolution
-      |
-      v
-Test application/service
-```
+<p align="center">
+  <img src="images/Network Troubleshooting Flowchart.png />
+</p>
 
 This helps distinguish problems such as:
 
