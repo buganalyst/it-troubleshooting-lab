@@ -1,17 +1,19 @@
-# IT Troubleshooting & Endpoint Recovery Lab
+# IT Troubleshooting Lab
 
-A hands-on technical lab documenting practical IT troubleshooting, endpoint diagnostics, operating-system deployment, system recovery, hardware diagnostics, storage recovery, bootloader repair, and offline troubleshooting using Windows PE and Linux live environments.
+A hands-on technical lab documenting practical IT troubleshooting, diagnostics, fault isolation, system recovery, operating-system deployment, hardware diagnostics, storage recovery, networking, and infrastructure troubleshooting.
 
 The repository is designed for two purposes:
 
-1. **Portfolio evidence:** demonstrate practical IT infrastructure, endpoint support, system administration, recovery, and troubleshooting skills.
-2. **Technical reference:** provide structured troubleshooting workflows that another technician, student, or user can follow when diagnosing a Windows/Linux computer.
+1. **Portfolio evidence:** demonstrate practical IT infrastructure, endpoint support, system administration, networking, diagnostics, recovery, and troubleshooting skills.
+2. **Technical reference:** provide structured troubleshooting workflows that another technician, student, or IT professional can follow when diagnosing systems, networks, and infrastructure problems.
 
-> Scope: Endpoint and workstation troubleshooting. This repository is being expanded toward server, networking, monitoring, cloud, and security diagnostics.
+> **Scope:** This repository covers IT troubleshooting across endpoints, hardware, operating systems, storage, recovery environments, networking, and infrastructure. It is designed to expand into server, virtualization, cloud, monitoring, and security troubleshooting.
 
 ## Core Philosophy
 
-The objective is not to collect tools. The objective is to develop a repeatable engineering method for isolating faults.
+The objective is not to collect tools or memorize commands.
+
+The objective is to develop a repeatable engineering method for identifying symptoms, collecting evidence, isolating faults, determining root causes, applying appropriate remediation, and validating the result.
 
 ```text
 INCIDENT
@@ -23,7 +25,7 @@ IDENTIFY SYMPTOM
 GATHER INFORMATION
    |
    v
-DEFINE SCOPE
+DEFINE SCOPE & IMPACT
    |
    v
 FORM HYPOTHESES
@@ -38,6 +40,9 @@ ISOLATE FAULT DOMAIN
 IDENTIFY ROOT CAUSE
    |
    v
+SELECT REMEDIATION
+   |
+   v
 APPLY REMEDIATION
    |
    v
@@ -47,21 +52,54 @@ VALIDATE FIX
 DOCUMENT / PREVENT
 ```
 
-A diagnostic result is evidence, not automatically a root cause. Every repair should be validated after remediation.
+A diagnostic result is evidence, not automatically a root cause.
 
-## Skills Demonstrated
+Every remediation should be validated after the change, and important incidents should be documented for future reference and prevention.
 
-### IT Support and Endpoint Engineering
+# Troubleshooting Domains
+
+The repository is organized around practical IT troubleshooting domains.
+
+```text
+                    IT TROUBLESHOOTING
+                           |
+        +------------------+------------------+
+        |                  |                  |
+     ENDPOINT            NETWORK          INFRASTRUCTURE
+        |                  |                  |
+   Windows/Linux       TCP/IP             Servers
+   Hardware            DNS                Virtualization
+   Storage             DHCP               Cloud
+   Boot                Routing            Monitoring
+   Applications        Connectivity       Services
+   Recovery            Performance        Logs
+        |
+        +------------------+
+        |
+      SECURITY
+        |
+   Malware Triage
+   Endpoint Security
+   Incident Analysis
+   System Hardening
+```
+
+The domains are intentionally expandable. New troubleshooting areas can be added without changing the overall structure of the repository.
+
+# Skills Demonstrated
+
+## IT Support & Endpoint Troubleshooting
 
 - Windows installation and deployment
 - Linux installation and deployment
 - Windows Recovery Environment (WinRE)
+- Windows PE / WinPE
 - Windows startup and boot troubleshooting
 - Windows Boot Manager recovery
 - Linux GRUB recovery
 - UEFI/BIOS boot troubleshooting
 - Partition management
-- Partition and filesystem troubleshooting
+- Filesystem troubleshooting
 - Data backup and recovery workflows
 - Offline system troubleshooting
 - Bootable recovery media
@@ -69,43 +107,230 @@ A diagnostic result is evidence, not automatically a root cause. Every repair sh
 - Storage diagnostics
 - RAM diagnostics
 - Peripheral troubleshooting
+- Application troubleshooting
 - System health verification
 - Offline malware/antivirus scanning
 - Technical documentation and incident-style troubleshooting
 
-### Diagnostic and Recovery Environments
+## Network Troubleshooting
+
+- TCP/IP troubleshooting
+- IPv4 configuration
+- IPv6 fundamentals
+- DHCP troubleshooting
+- DNS troubleshooting
+- Default gateway troubleshooting
+- Routing diagnosis
+- ARP troubleshooting
+- Network connectivity testing
+- Packet-loss investigation
+- Latency investigation
+- Ethernet troubleshooting
+- Wi-Fi troubleshooting
+- Network adapter diagnostics
+- Port connectivity testing
+- Local-network troubleshooting
+- Internet connectivity troubleshooting
+- Firewall-related connectivity diagnosis
+- Network configuration inspection
+- Network path analysis
+- Layered fault isolation
+
+## System & Infrastructure Troubleshooting
+
+- Windows system diagnostics
+- Linux system diagnostics
+- System performance analysis
+- Service troubleshooting
+- Event-log analysis
+- Linux journal analysis
+- Process and resource analysis
+- Storage and filesystem diagnostics
+- Boot and recovery troubleshooting
+- Server troubleshooting
+- Virtualization troubleshooting
+- Monitoring and log analysis
+- Infrastructure fault isolation
+
+## Security Troubleshooting
+
+- Malware triage
+- Offline malware scanning
+- Suspicious process investigation
+- Suspicious network activity investigation
+- Endpoint security troubleshooting
+- Security event analysis
+- Initial incident triage
+- System isolation during security incidents
+- Post-incident validation
+
+# Diagnostic & Recovery Environments
+
+This lab uses multiple environments depending on the fault domain.
+
+### Boot & Recovery
 
 - Ventoy
-- Medicat
 - Windows PE / WinPE
 - Windows Recovery Environment / WinRE
 - Linux Live environments
-- MemTest86
-- Disk and partition diagnostic/recovery utilities
-- Vendor hardware diagnostics
+- Medicat
+- Vendor recovery environments
 
-### Engineering Concepts
+### Hardware Diagnostics
+
+- MemTest86
+- UEFI/OEM diagnostics
+- CPU diagnostics
+- RAM diagnostics
+- Storage diagnostics
+- Hardware monitoring utilities
+
+### Storage & Recovery
+
+- SMART diagnostics
+- NVMe utilities
+- Disk and partition utilities
+- Filesystem utilities
+- Disk imaging tools
+- Data recovery utilities
+- Disk cloning tools
+
+### Network Diagnostics
+
+- Windows PowerShell
+- Windows networking utilities
+- Linux networking utilities
+- Packet/path testing utilities
+- DNS diagnostic utilities
+- Socket and connection inspection tools
+
+# Engineering Concepts
+
+The repository focuses on transferable troubleshooting principles rather than individual tools.
 
 - Fault isolation
 - Root-cause analysis
 - Evidence-based troubleshooting
-- Recovery planning
+- Hypothesis-driven diagnosis
+- Layered troubleshooting
+- Fault-domain isolation
 - Least-destructive-first remediation
 - Backup-before-modification
+- Change awareness
+- Dependency analysis
+- Recovery planning
 - Validation after remediation
-- Documentation and prevention
+- Preventive actions
+- Incident documentation
+- Reproducibility
+- Escalation based on evidence
 
-## Diagnostic Architecture
+# Diagnostic Architecture
 
-A professional endpoint investigation can be divided into layers:
+Different incidents require investigation at different layers.
+
+For endpoint and workstation problems:
 
 <p align="center">
   <img src="images/IT Troubleshooting Flowchart.png" />
 </p>
 
-The correct starting layer depends on the symptom.
+The correct starting layer depends on the observed symptom.
 
-## Recovery Media Strategy
+For example:
+
+```text
+Laptop is slow
+      |
+      +--> Application
+      +--> CPU
+      +--> RAM
+      +--> Storage
+      +--> Thermal
+      +--> Driver
+      +--> Malware
+      +--> Background services
+```
+
+The purpose of the investigation is to narrow this fault domain using evidence rather than immediately applying fixes.
+
+# Network Troubleshooting Model
+
+Network incidents should also be approached systematically.
+
+```text
+USER / APPLICATION
+        |
+        v
+SERVICE / PORT
+        |
+        v
+DNS
+        |
+        v
+IP CONFIGURATION
+        |
+        v
+DEFAULT GATEWAY
+        |
+        v
+LOCAL NETWORK
+        |
+        v
+ROUTING
+        |
+        v
+REMOTE NETWORK
+        |
+        v
+INTERNET / DESTINATION
+```
+
+Example:
+
+```text
+"No Internet"
+      |
+      v
+Check interface
+      |
+      v
+Check IP address
+      |
+      v
+Check subnet configuration
+      |
+      v
+Check default gateway
+      |
+      v
+Test gateway
+      |
+      v
+Test remote IP
+      |
+      v
+Test DNS resolution
+      |
+      v
+Test application/service
+```
+
+This helps distinguish problems such as:
+
+- Physical/link failure
+- Network adapter failure
+- DHCP failure
+- Incorrect IP configuration
+- Default gateway failure
+- Routing problems
+- DNS failure
+- Firewall restrictions
+- Remote service failure
+- Application-level problems
+
+# Recovery Media Strategy
 
 A bootable USB is useful because it allows diagnostics and recovery independently of the installed operating system.
 
@@ -115,9 +340,11 @@ Typical workflow:
   <img src="images/Boot and Recovery Flowchart.png" />
 </p>
 
-Ventoy is an open-source bootable USB solution that can boot multiple ISO/WIM/IMG/VHD(x)/EFI images from one device. The project documents support for Windows/WinPE and Linux among other environments. See the official Ventoy documentation before creating or modifying recovery media.
+Ventoy is an open-source bootable USB solution that can boot multiple ISO/WIM/IMG/VHD(x)/EFI images from one device. The project documents support for Windows/WinPE and Linux among other environments.
 
-## Recommended Case Study Format
+See the official Ventoy documentation before creating or modifying recovery media.
+
+# Recommended Case Study Format
 
 Every troubleshooting case should document:
 
@@ -127,7 +354,7 @@ Incident
   +-- Symptom
   +-- Environment
   +-- Initial observations
-  +-- Scope
+  +-- Scope & impact
   +-- Hypotheses
   +-- Diagnostic tests
   +-- Evidence
@@ -150,27 +377,36 @@ Instead document:
 
 > Symptom → observed boot failure → verified hardware → inspected EFI/boot configuration → tested recovery commands → repaired boot configuration → rebooted → validated normal startup.
 
-This demonstrates engineering reasoning.
+This demonstrates the reasoning behind the troubleshooting process rather than simply showing the final command.
 
-## Tool Matrix
+---
 
-| Area | Tools / Environments | Purpose |
+# Tool Matrix
+
+| Domain | Tools / Environments | Purpose |
 |---|---|---|
 | Bootable media | Ventoy | Multi-image boot and recovery media |
 | Windows recovery | WinRE / WinPE | Offline Windows troubleshooting |
-| Linux recovery | Linux Live environment | Offline Linux/filesystem troubleshooting |
+| Linux recovery | Linux Live | Offline Linux/filesystem troubleshooting |
 | Memory | MemTest86 | Stand-alone RAM diagnostics |
-| Storage | SMART / NVMe tools / vendor utilities | Drive health and diagnostics |
-| Partitioning | Disk/partition utilities | Partition inspection and recovery workflows |
+| Storage | SMART / NVMe / vendor utilities | Drive health and diagnostics |
+| Partitioning | Disk/partition utilities | Partition inspection and recovery |
 | Hardware | UEFI/OEM diagnostics | Pre-OS hardware testing |
-| Networking | ipconfig, PowerShell, ip, ping, nslookup/dig, tracert/traceroute | Layered network diagnosis |
+| Windows networking | ipconfig, PowerShell, ping, tracert, nslookup | Network diagnosis |
+| Linux networking | ip, ping, traceroute, dig, ss | Network diagnosis |
+| DNS | nslookup, dig | DNS resolution troubleshooting |
+| Routing | route, ip route, tracert, traceroute | Routing/path diagnosis |
+| Connectivity | ping, Test-NetConnection, nc | Connectivity and port testing |
 | Logs | Event Viewer, journalctl | OS/event investigation |
 | Windows | PowerShell | System inspection and automation |
 | Linux | Bash and standard CLI tools | System inspection and troubleshooting |
+| Hardware monitoring | HWiNFO / vendor utilities | Hardware health and telemetry |
+| Storage recovery | TestDisk / PhotoRec / recovery utilities | Data and partition recovery |
+| Imaging | Clonezilla / Rescuezilla / imaging utilities | Disk imaging and migration |
 
-## Safety and Data Protection
+# Safety and Data Protection
 
-Recovery operations can cause permanent data loss.
+Recovery and diagnostic operations can cause permanent data loss.
 
 Before modifying partitions, filesystems, boot configuration, or disks:
 
@@ -180,11 +416,88 @@ Before modifying partitions, filesystems, boot configuration, or disks:
 4. Avoid writing to a failing source disk unnecessarily.
 5. Work from a copy when recovery integrity matters.
 6. Record the original partition layout and relevant observations.
-7. Validate the recovered data before declaring success.
+7. Validate recovered data before declaring success.
+8. Confirm the target before destructive operations.
+9. Document significant changes.
+10. Use appropriate authorization for systems that are not personally owned.
 
-For enterprise or third-party systems, obtain authorization before performing diagnostics or recovery.
+For enterprise or third-party systems, obtain authorization before performing diagnostics, recovery, configuration changes, or security investigations.
 
-## Official Documentation
+# Future Expansion
+
+Planned additions include:
+
+### Endpoint & OS
+
+- Windows performance troubleshooting
+- Windows event-log case studies
+- PowerShell diagnostic scripts
+- Linux system diagnostic scripts
+- Linux boot and filesystem recovery
+- Application troubleshooting
+
+### Networking
+
+- TCP/IP troubleshooting labs
+- DNS troubleshooting
+- DHCP troubleshooting
+- Routing troubleshooting
+- VLAN troubleshooting
+- Switching fundamentals
+- Wi-Fi troubleshooting
+- Firewall troubleshooting
+- Port and service connectivity
+- Packet-analysis exercises
+
+### Server & Enterprise Infrastructure
+
+- Windows Server diagnostics
+- Active Directory troubleshooting
+- DNS server troubleshooting
+- DHCP server troubleshooting
+- File-server troubleshooting
+- Authentication troubleshooting
+- Group Policy troubleshooting
+- Server performance diagnostics
+
+### Virtualization
+
+- Virtual machine boot problems
+- Virtual networking problems
+- Virtual disk problems
+- Hypervisor troubleshooting
+- VM performance diagnostics
+
+### Monitoring & Observability
+
+- System monitoring
+- Resource monitoring
+- Log analysis
+- Event correlation
+- Performance baselines
+- Alert investigation
+- Incident timelines
+
+### Cloud Infrastructure
+
+- Cloud connectivity troubleshooting
+- Virtual network troubleshooting
+- Security-group/firewall diagnosis
+- Compute-instance troubleshooting
+- Storage troubleshooting
+- Load-balancer troubleshooting
+- Cloud monitoring and logging
+
+### Security
+
+- Malware triage
+- Endpoint security troubleshooting
+- Suspicious process investigation
+- Network security investigation
+- Security-event analysis
+- Incident response fundamentals
+
+# Official Documentation
 
 - Microsoft Windows Recovery Environment: https://learn.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference
 - Microsoft Windows recovery framework: https://learn.microsoft.com/en-us/windows/configuration/windows-device-recovery-framework
@@ -195,27 +508,21 @@ For enterprise or third-party systems, obtain authorization before performing di
 - MemTest86 user guide: https://www.memtest86.com/userguide.html
 - Ubuntu bootable USB documentation: https://ubuntu.com/desktop/docs/en/latest/how-to/create-a-bootable-usb-stick/
 
-Always obtain third-party software from its official project/vendor source and verify downloads where checksums/signatures are provided.
+Always obtain third-party software from its official project/vendor source and verify downloads where checksums or signatures are provided.
 
-## Future Expansion
+# Disclaimer
 
-Planned additions:
+This repository documents educational and authorized troubleshooting practices.
 
-- Windows event-log case studies
-- PowerShell endpoint diagnostic scripts
-- Linux system diagnostic scripts
-- Network troubleshooting labs
-- TCP/IP fault-isolation exercises
-- DNS/DHCP troubleshooting
-- Windows Server diagnostics
-- Active Directory troubleshooting
-- Virtualization diagnostics
-- Monitoring and log-analysis examples
-- Cloud infrastructure troubleshooting
-- Security incident triage
-- Endpoint Detection and Response concepts
-- IT incident reports and postmortems
+Recovery, diagnostic, networking, configuration, and security operations can damage data or systems if performed incorrectly.
 
-## Disclaimer
+Always:
 
-This repository documents educational and authorized troubleshooting practices. Recovery and diagnostic operations can damage data or systems if performed incorrectly. Always verify the target device and maintain appropriate backups. Do not use these procedures on systems or data without authorization.
+- Verify the target system.
+- Maintain appropriate backups.
+- Understand the potential impact of changes.
+- Obtain authorization before working on third-party systems.
+- Avoid destructive operations until non-destructive diagnostic options have been exhausted.
+- Follow vendor and organizational procedures where applicable.
+
+Do not use these procedures on systems or data without authorization.
