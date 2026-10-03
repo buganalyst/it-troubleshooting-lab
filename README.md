@@ -60,29 +60,9 @@ Every remediation should be validated after the change, and important incidents 
 
 The repository is organized around practical IT troubleshooting domains.
 
-```text
-                    IT TROUBLESHOOTING
-                           |
-        +------------------+------------------+
-        |                  |                  |
-     ENDPOINT            NETWORK          INFRASTRUCTURE
-        |                  |                  |
-   Windows/Linux       TCP/IP             Servers
-   Hardware            DNS                Virtualization
-   Storage             DHCP               Cloud
-   Boot                Routing            Monitoring
-   Applications        Connectivity       Services
-   Recovery            Performance        Logs
-        |
-        +------------------+
-        |
-      SECURITY
-        |
-   Malware Triage
-   Endpoint Security
-   Incident Analysis
-   System Hardening
-```
+<p align="center">
+  <img src="images/IT Troubleshooting Taxonomy.png" />
+</p>
 
 The domains are intentionally expandable. New troubleshooting areas can be added without changing the overall structure of the repository.
 
