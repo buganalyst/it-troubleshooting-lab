@@ -70,79 +70,41 @@ The domains are intentionally expandable. New troubleshooting areas can be added
 
 ## IT Support & Endpoint Troubleshooting
 
-- Windows installation and deployment
-- Linux installation and deployment
-- Windows Recovery Environment (WinRE)
-- Windows PE / WinPE
-- Windows startup and boot troubleshooting
-- Windows Boot Manager recovery
-- Linux GRUB recovery
-- UEFI/BIOS boot troubleshooting
-- Partition management
-- Filesystem troubleshooting
-- Data backup and recovery workflows
-- Offline system troubleshooting
-- Bootable recovery media
-- Hardware diagnostics
-- Storage diagnostics
-- RAM diagnostics
-- Peripheral troubleshooting
-- Application troubleshooting
+- Windows/Linux installation and deployment
+- WinRE/WinPE and bootable recovery media
+- Windows Boot Manager and GRUB recovery
+- UEFI/BIOS and boot troubleshooting
+- Hardware, RAM, storage, and filesystem diagnostics
+- Partition, backup, and data recovery
+- Peripheral and application troubleshooting
+- Offline malware scanning
 - System health verification
-- Offline malware/antivirus scanning
-- Technical documentation and incident-style troubleshooting
+- Technical incident documentation
 
 ## Network Troubleshooting
 
-- TCP/IP troubleshooting
-- IPv4 configuration
-- IPv6 fundamentals
-- DHCP troubleshooting
-- DNS troubleshooting
-- Default gateway troubleshooting
-- Routing diagnosis
-- ARP troubleshooting
-- Network connectivity testing
-- Packet-loss investigation
-- Latency investigation
-- Ethernet troubleshooting
-- Wi-Fi troubleshooting
-- Network adapter diagnostics
-- Port connectivity testing
-- Local-network troubleshooting
-- Internet connectivity troubleshooting
-- Firewall-related connectivity diagnosis
-- Network configuration inspection
-- Network path analysis
-- Layered fault isolation
+- TCP/IP, IPv4/IPv6, DHCP, DNS, and ARP
+- Gateway and routing troubleshooting
+- Ethernet and Wi-Fi diagnostics
+- Connectivity, latency, and packet-loss analysis
+- Port and firewall troubleshooting
+- Network configuration and path analysis
+- Layered network fault isolation
 
 ## System & Infrastructure Troubleshooting
 
-- Windows system diagnostics
-- Linux system diagnostics
-- System performance analysis
-- Service troubleshooting
-- Event-log analysis
-- Linux journal analysis
-- Process and resource analysis
-- Storage and filesystem diagnostics
-- Boot and recovery troubleshooting
-- Server troubleshooting
-- Virtualization troubleshooting
-- Monitoring and log analysis
-- Infrastructure fault isolation
+- Windows/Linux system diagnostics
+- Performance and resource analysis
+- Service and log troubleshooting
+- Server and virtualization diagnostics
+- Monitoring and infrastructure fault isolation
 
 ## Security Troubleshooting
 
-- Malware triage
-- Offline malware scanning
-- Suspicious process investigation
-- Suspicious network activity investigation
-- Endpoint security troubleshooting
+- Malware and endpoint security triage
+- Suspicious process/network investigation
 - Security event analysis
-- Initial incident triage
-- System isolation during security incidents
-- Post-incident validation
+- Incident isolation and validation
 
 # Engineering Concepts
 
@@ -171,9 +133,50 @@ Different incidents require investigation at different layers.
 
 For endpoint and workstation problems:
 
-<p align="center">
-  <img src="images/IT Troubleshooting Flowchart.png" />
-</p>
+```text
++--------------------------------------------------+
+|                 USER / SYMPTOM                   |
+|   User reports an issue or unexpected behaviour  |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|          APPLICATION / SERVICES                  |
+| Check application logs, errors, services state,  |
+| and application health                           |  
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|              OPERATING SYSTEM                    |
+| Investigate processes, filesystems, system logs, |
+| memory and drivers                               |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|                   NETWORK                        |
+| Verify network connectivity and configuration    |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|                   STORAGE                        |
+| Check storage health, partitions and filesystems |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|                   HARDWARE                       |
+|        Diagnose physical components              |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|               FIRMWARE / BOOT                    |
+|     Verify UEFI/BIOS settings and bootloader     |
++--------------------------------------------------+
+```
 
 The correct starting layer depends on the observed symptom.
 
@@ -183,9 +186,69 @@ The purpose of the investigation is to narrow this fault domain using evidence r
 
 Network incidents should also be approached systematically.
 
-<p align="center">
-  <img src="images/Network Troubleshooting Flowchart.png" />
-</p>
+```text
++--------------------------------------------------+
+|               USER / APPLICATION                 |
+| User or application is accessing a network       |
+| resource or service                              |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|                SERVICE / PORT                    |
+| Verify the required service is running and       |
+| the destination port is reachable                |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|                     DNS                          |
+| Verify the hostname resolves to the correct      |
+| destination IP address                           |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|                IP CONFIGURATION                  |
+| Verify IP address, subnet mask, gateway and DNS  |
+| configuration                                    |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|                 DEFAULT GATEWAY                  |
+| Verify the device can reach its local router     |
+| or default gateway                               |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|                  LOCAL NETWORK                   |
+| Verify connectivity within the local network     |
+| and network devices                              |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|                   ROUTING                        |
+| Verify traffic has a valid path to the remote    |
+| destination                                      |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|                 REMOTE NETWORK                   |
+| Verify the remote network is reachable and       |
+| responding                                       |
++--------------------------------------------------+
+                       |
+                       v
++--------------------------------------------------+
+|              INTERNET / DESTINATION              |
+| Verify final connectivity to the destination     |
+| service or internet resource                     |
++--------------------------------------------------+
+```
 
 This helps distinguish problems such as:
 
@@ -213,6 +276,29 @@ Typical workflow:
 Ventoy is an open-source bootable USB solution that can boot multiple ISO/WIM/IMG/VHD(x)/EFI images from one device. The project documents support for Windows/WinPE and Linux among other environments.
 
 See the official Ventoy documentation before creating or modifying recovery media.
+
+# Tool Matrix
+
+| Domain | Tools / Environments | Purpose |
+|---|---|---|
+| Bootable media | Ventoy | Multi-image boot and recovery media |
+| Windows recovery | WinRE / WinPE | Offline Windows troubleshooting |
+| Linux recovery | Linux Live | Offline Linux/filesystem troubleshooting |
+| Memory | MemTest86 | Stand-alone RAM diagnostics |
+| Storage | SMART / NVMe / vendor utilities | Drive health and diagnostics |
+| Partitioning | Disk/partition utilities | Partition inspection and recovery |
+| Hardware | UEFI/OEM diagnostics | Pre-OS hardware testing |
+| Windows networking | ipconfig, PowerShell, ping, tracert, nslookup | Network diagnosis |
+| Linux networking | ip, ping, traceroute, dig, ss | Network diagnosis |
+| DNS | nslookup, dig | DNS resolution troubleshooting |
+| Routing | route, ip route, tracert, traceroute | Routing/path diagnosis |
+| Connectivity | ping, Test-NetConnection, nc | Connectivity and port testing |
+| Logs | Event Viewer, journalctl | OS/event investigation |
+| Windows | PowerShell | System inspection and automation |
+| Linux | Bash and standard CLI tools | System inspection and troubleshooting |
+| Hardware monitoring | HWiNFO / vendor utilities | Hardware health and telemetry |
+| Storage recovery | TestDisk / PhotoRec / recovery utilities | Data and partition recovery |
+| Imaging | Clonezilla / Rescuezilla / imaging utilities | Disk imaging and migration |
 
 # Recommended Case Study Format
 
@@ -248,29 +334,6 @@ Instead document:
 > Symptom → observed boot failure → verified hardware → inspected EFI/boot configuration → tested recovery commands → repaired boot configuration → rebooted → validated normal startup.
 
 This demonstrates the reasoning behind the troubleshooting process rather than simply showing the final command.
-
-# Tool Matrix
-
-| Domain | Tools / Environments | Purpose |
-|---|---|---|
-| Bootable media | Ventoy | Multi-image boot and recovery media |
-| Windows recovery | WinRE / WinPE | Offline Windows troubleshooting |
-| Linux recovery | Linux Live | Offline Linux/filesystem troubleshooting |
-| Memory | MemTest86 | Stand-alone RAM diagnostics |
-| Storage | SMART / NVMe / vendor utilities | Drive health and diagnostics |
-| Partitioning | Disk/partition utilities | Partition inspection and recovery |
-| Hardware | UEFI/OEM diagnostics | Pre-OS hardware testing |
-| Windows networking | ipconfig, PowerShell, ping, tracert, nslookup | Network diagnosis |
-| Linux networking | ip, ping, traceroute, dig, ss | Network diagnosis |
-| DNS | nslookup, dig | DNS resolution troubleshooting |
-| Routing | route, ip route, tracert, traceroute | Routing/path diagnosis |
-| Connectivity | ping, Test-NetConnection, nc | Connectivity and port testing |
-| Logs | Event Viewer, journalctl | OS/event investigation |
-| Windows | PowerShell | System inspection and automation |
-| Linux | Bash and standard CLI tools | System inspection and troubleshooting |
-| Hardware monitoring | HWiNFO / vendor utilities | Hardware health and telemetry |
-| Storage recovery | TestDisk / PhotoRec / recovery utilities | Data and partition recovery |
-| Imaging | Clonezilla / Rescuezilla / imaging utilities | Disk imaging and migration |
 
 # Safety and Data Protection
 
