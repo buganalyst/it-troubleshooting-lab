@@ -408,19 +408,6 @@ Planned additions include:
 - Security-event analysis
 - Incident response fundamentals
 
-# Official Documentation
-
-- Microsoft Windows Recovery Environment: https://learn.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference
-- Microsoft Windows recovery framework: https://learn.microsoft.com/en-us/windows/configuration/windows-device-recovery-framework
-- Microsoft WinRE troubleshooting features: https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-re-troubleshooting-features
-- Ventoy documentation: https://www.ventoy.net/en/doc_start.html
-- Ventoy source repository: https://github.com/ventoy/Ventoy
-- MemTest86: https://www.memtest86.com/
-- MemTest86 user guide: https://www.memtest86.com/userguide.html
-- Ubuntu bootable USB documentation: https://ubuntu.com/desktop/docs/en/latest/how-to/create-a-bootable-usb-stick/
-
-Always obtain third-party software from its official project/vendor source and verify downloads where checksums or signatures are provided.
-
 # Disclaimer
 
 This repository documents educational and authorized troubleshooting practices.
