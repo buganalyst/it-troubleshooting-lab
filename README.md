@@ -68,7 +68,14 @@ The domains are intentionally expandable. New troubleshooting areas can be added
 
 # Skills Demonstrated
 
-## IT Support & Endpoint Troubleshooting
+## IT Support Troubleshooting
+
+- Help desk and user issue diagnosis
+- Hardware, software, OS, and peripheral support
+- System configuration and basic connectivity troubleshooting
+- User-focused issue resolution and escalation
+
+## Endpoint Troubleshooting
 
 - Windows/Linux installation and deployment
 - WinRE/WinPE and bootable recovery media
