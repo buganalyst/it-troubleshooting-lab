@@ -363,17 +363,4 @@ For enterprise or third-party systems, obtain authorization before performing di
 
 # Disclaimer
 
-This repository documents educational and authorized troubleshooting practices.
-
-Recovery, diagnostic, networking, configuration, and security operations can damage data or systems if performed incorrectly.
-
-Always:
-
-- Verify the target system.
-- Maintain appropriate backups.
-- Understand the potential impact of changes.
-- Obtain authorization before working on third-party systems.
-- Avoid destructive operations until non-destructive diagnostic options have been exhausted.
-- Follow vendor and organizational procedures where applicable.
-
-Do not use these procedures on systems or data without authorization.
+This repository documents educational and authorized troubleshooting practices. Recovery and diagnostic operations can damage data or systems if performed incorrectly. Always verify the target device and maintain appropriate backups. Do not use these procedures on systems or data without authorization.
